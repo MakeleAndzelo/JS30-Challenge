@@ -1,0 +1,21 @@
+:root {
+	--color: #000000;
+	--radius: 0;
+	--border-size: 1px;
+	--size: 100px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.shape {
+	width: var(--size);
+	height: var(--size);
+	border: var(--border-size) solid var(--color);
+	border-radius: 0;
+	margin-top: 100px;
+}
