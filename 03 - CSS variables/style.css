@@ -1,5 +1,5 @@
 :root {
-	--color: #000000;
+	--border-color: #000000;
 	--radius: 0;
 	--border-size: 1px;
 	--size: 100px;
@@ -13,9 +13,10 @@
 }
 
 .shape {
+	transition: all .5s ease-in-out;
 	width: var(--size);
 	height: var(--size);
-	border: var(--border-size) solid var(--color);
-	border-radius: 0;
+	border: var(--border-size) solid var(--border-color);
+	border-radius: var(--radius);
 	margin-top: 100px;
 }
