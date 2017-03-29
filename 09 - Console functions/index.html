@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Console functions</title>
+</head>
+<body>
+	<p>Check console</p>
+
+	<script>
+		const p = document.querySelector("p");
+
+		const dogs = [
+			{
+				name: "jeff",
+				age: 25
+			},
+			{
+				name: "dropsik",
+				age: 500 
+			}
+
+		];
+
+		// Regular usability
+		console.log('Hi!');
+
+		//Interpolated
+		console.log("Hello %s", "Michal");
+
+		//Styled
+		console.log("%c This is styled console log", "font-size: 40px;");
+
+		//Warning
+		console.warn("I'm warning you");
+
+		//Error
+		console.error("Upss, Error!");
+
+		// Inform
+		console.info("I'm informing you");
+
+		// Testing
+		console.assert(1===2, "if i'm false i will show you this message");
+
+		// clearing 
+		//console.clear();
+
+		// dom elements
+		console.dir(p)
+
+		// table
+		console.table(dogs);
+
+		// grouping
+		dogs.forEach( dog => {
+			console.groupCollapsed(`${dog.name}`)
+			console.log(`This is my dog, ${dog.name}`);
+			console.log(`${dog.name} is ${dog.age} years old`);
+			console.groupEnd(`${dog.name}`);
+		});
+
+		// counting
+		console.count("Dropsik");
+		console.count("Dropsik");
+		console.count("Dropsik");
+		console.count("Sara");
+		console.count("Sara");
+		console.count("Sara");
+		console.count("Sara");
+		console.count("Sara");
+		console.count("Sara");
+		console.count("Sara");
+
+		// timing
+		console.time("fetchingData");
+		fetch("https://raw.githubusercontent.com/bjarneo/town-crier/master/package.json").
+			then(blob => blob.json()).
+			then(data => {
+				console.timeEnd("fetchingData");
+				console.log(data);
+			})
+	</script>
+</body>
+</html>
