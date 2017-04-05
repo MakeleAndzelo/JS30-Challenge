@@ -20,7 +20,7 @@ function addTask(e) {
 
 function publicTasks(items) {
 	let tasks = '';
-	let i = 1;
+	let i = 0;
 	items.forEach(item => {
 		let checked = item.done ? 'checked' : '';
 		tasks += `
@@ -32,6 +32,15 @@ function publicTasks(items) {
 	taskList.innerHTML = tasks;
 }
 
+function updateTask(e) {
+	if(!e.target.matches('input')) return;
+	let index = e.target.dataset.index;
+	items[index].done = !items[index].done;
+	localStorage.setItem('items', JSON.stringify(items));
+}
+
 form.addEventListener('submit', addTask);
+taskList.addEventListener('click', updateTask);
+
 
 publicTasks(items);
