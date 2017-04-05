@@ -1,0 +1,59 @@
+* {
+	box-sizing: border-box;
+}
+
+body,
+html {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+.wrapper {
+	font-family: 'Raleway', sans-serif;
+	background: #FFEB3B;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.todo {
+	background: #FFFDE7;
+	padding: 3rem;
+	border-radius: 9px;
+}
+
+h1 {
+	margin-bottom: 50px;
+}
+
+.todo-list {
+	padding: 0;
+	margin-bottom: 50px;
+	list-style: none;
+}
+
+.todo-list .task {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.todo-list .task:last-child {
+	margin-bottom: 0;
+}
+
+input[type="text"] {
+	padding: 0.5rem;
+	border: 1px solid #FFEB3B;
+}
+
+button {
+	padding: 0.5rem;
+	border: 1px solid #FFEB3B;
+	background: #FFFDE7;
+	cursor: pointer;
+}
