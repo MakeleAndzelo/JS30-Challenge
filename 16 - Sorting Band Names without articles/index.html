@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sorting Band Names</title>
+</head>
+<body>
+	<h3>Unsorted:</h3>
+	<ul class="unsorted-bands">
+		
+	</ul>
+	<h3>Sorted:</h3>
+	<ul class="sorted-bands">
+		
+	</ul>
+
+	<script>
+		function stripe(bandName) {
+			return bandName.replace(/^(a |the |an )/i, '').trim();
+		}
+
+		const bands = ['The Doors', 'Van Halen', 'The Beach Boys', 'Alice in Chains', 'The Smashing Pumpkins', 'An Old Dog', 'A Skylit Drive', 'We Came as Romans'];
+
+		document.querySelector('.unsorted-bands').innerHTML = bands.map(band => `<li>${band}</li>`).join('');
+
+		const sortedBands = bands.sort((a,b) => stripe(a) > stripe(b) ? 1 : -1);
+
+		document.querySelector('.sorted-bands').innerHTML = sortedBands.map(band => `<li>${band}</li>`).join('');
+	</script>
+</body>
+</html>
